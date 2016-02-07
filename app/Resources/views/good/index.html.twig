@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table border="1">
+      <tr class="heading">
+        <td>Название товара</td>
+        <td>Цена товара</td>
+        <td>Список фото</td>
+      </tr>
+      {% for good in goodList %}
+      <tr>
+        <td>{{ good.title }}</td>
+        <td>{{ good.price }}</td>
+		<td>
+			{% if good.photo %}
+				{% for photo in good.photo %}
+					{{ photo }}<br>
+				{% endfor %}
+			{% endif %}	
+		</td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

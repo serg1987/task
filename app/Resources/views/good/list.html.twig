@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<ul>
+      {% for good in goodList %}
+		<li>{{good.title}}</li>
+	  {% endfor %}
+	</ul>
+{% endblock %}
